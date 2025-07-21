@@ -1,17 +1,15 @@
 import sys
 
-args = sys.argv
-levels = args[1]
 
-level_start, level_end = levels.split('-')
 
 def create_template_file(level_start, level_end):
 
   URL = f"https://overthewire.org/wargames/bandit{level_start}.html"
   URL_TEXT = f"Level {level_start}-{level_end} Page"
   TITLE = f"# Bandit Level {level_start}-{level_end} Write-Up"
+  PATH = "./write_ups"
   FILENAME = f"{level_start}-{level_end}.md"
-
+  FILEPATH = f"{PATH}/{FILENAME}"
 
   template_text = f"""{TITLE}
 
@@ -67,11 +65,13 @@ def create_template_file(level_start, level_end):
 """
 
 
-  with open(FILENAME, "w") as f:
+  with open(FILEPATH, "w") as f:
     f.write(template_text)
 
 
-  print(f"\n{FILENAME} successfully created.")
+  print(f"\n{FILEPATH} successfully created.")
 
 
-create_template_file(level_start, level_end)
+if __name__ == "__main__":
+  level_start, level_end = sys.argv[1:]
+  create_template_file(level_start, level_end)
